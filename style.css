@@ -522,7 +522,7 @@ footer {
 }
  /* Updated Footer */
         .new-footer {
-            background-color:#9aba3f ;
+            background-color:var(--dark) ;
             color: #ccc;
             text-align: center;
             padding: 20px 0;
@@ -552,7 +552,7 @@ footer {
             height: 2px;
             bottom: -2px;
             left: 0;
-            background-color: #9aba3f;
+            background-color: var(--dark);
             transition: width 0.3s ease;
         }
 
