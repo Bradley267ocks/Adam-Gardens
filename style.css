@@ -559,19 +559,6 @@ footer {
         .new-footer a:hover::after {
             width: 100%;
         }
-.new-footer .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-}
-
-.footer-bottom,
-.design-credit {
-    margin: 0;
-    padding: 0.5rem 0;
-}
 
 /* WhatsApp Button */
 .whatsapp-btn {
