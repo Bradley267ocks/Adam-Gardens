@@ -40,34 +40,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission handling
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Formspree handles the submission, but we can show a success message
+        // Collect form data
         const formData = new FormData(contactForm);
+        let name = formData.get("name");
+        let email = formData.get("email");
+        let phone = formData.get("phone");
+        let service = formData.get("service");
+        let message = formData.get("message");
+
+        // WhatsApp number (international format, no + or spaces)
+        let phoneNumber = "27742982045"; 
+
+        // Build WhatsApp message
+        let whatsappMessage = `Hello, I would like to inquire:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Service:* ${service}\n*Message:* ${message}`;
         
-        fetch('https://formspree.io/f/mjvqkqgb', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => {
-            if (response.ok) {
-                alert('Thank you for your message! We will get back to you soon.');
-                contactForm.reset();
-            } else {
-                alert('Oops! There was a problem sending your message. Please try again.');
-            }
-        })
-        .catch(error => {
-            alert('Oops! There was a problem sending your message. Please try again.');
-        });
+        // Open WhatsApp chat
+        let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+        window.open(url, "_blank");
+
+        // Reset form
+        contactForm.reset();
     });
 }
 
