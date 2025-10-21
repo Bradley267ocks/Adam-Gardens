@@ -55,7 +55,7 @@ if (contactForm) {
         let message = formData.get("message");
 
         // WhatsApp number (international format, no + or spaces)
-        let phoneNumber = "27742982045"; 
+        let phoneNumber = "27645192556"; 
 
         // Build WhatsApp message
         let whatsappMessage = `Hello, I would like to inquire:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Service:* ${service}\n*Message:* ${message}`;
